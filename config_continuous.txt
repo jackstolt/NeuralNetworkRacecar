@@ -4,16 +4,16 @@
 # or the experiment itself.  This is the only required section.
 [NEAT]
 fitness_criterion     = max
-fitness_threshold     = 6500
+fitness_threshold     = 900
 pop_size              = 50
 reset_on_extinction   = 0
 no_fitness_termination = False
 
 [DefaultGenome]
 num_inputs              = 8
-num_hidden              = 1
-num_outputs             = 5
-initial_connection      = full_direct
+num_hidden              = 0
+num_outputs             = 1
+initial_connection      = partial_direct 0.5
 feed_forward            = False
 compatibility_disjoint_coefficient = 1.0
 compatibility_weight_coefficient   = 0.6
@@ -21,8 +21,8 @@ conn_add_prob           = 0.1
 conn_delete_prob        = 0.1
 node_add_prob           = 0.1
 node_delete_prob        = 0.1
-activation_default      = relu
-activation_options      = relu
+activation_default      = tanh
+activation_options      = tanh
 activation_mutate_rate  = 0.1
 aggregation_default     = sum
 aggregation_options     = sum
@@ -58,7 +58,7 @@ weight_mutate_rate      = 0.8
 weight_replace_rate     = 0.1
 weight_mutate_power     = 0.5
 enabled_default         = True
-enabled_mutate_rate     = 0.01  
+enabled_mutate_rate     = 0.01
 
 [DefaultSpeciesSet]
 compatibility_threshold = 3.0
